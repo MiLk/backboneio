@@ -1,0 +1,27 @@
+{
+  "author": "Emilien Kenler <hello@emilienkenler.com> (http://www.emilienkenler.com)",
+  "name": "backboneio",
+  "description": "BackboneIO",
+  "version": "0.0.1",
+  "repository": {
+    "url": "git://github.com/MiLk/backbone.git"
+  },
+  "main": "server.js",
+  "dependencies": {
+  	"express": "*",
+  	"underscore": "*",
+  	"backbone": "*",
+    "backbone.iobind": "*",
+  	"socket.io": "*",
+  	"ejs": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts" : {
+    "start": "NODE_ENV=development node server.js"
+  },
+  "config" : { "port" : "3000" }
+}
