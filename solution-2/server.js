@@ -28,28 +28,25 @@ io = io.listen(app.listen(process.env.npm_package_config_port, function(){
 }));
 
 var MyModels = require(__dirname + '/public/models/MyModels.js');
-var my_server = Array();
+var my_servers = new MyModels.ServerCollection();
 
 for(i=1;i<5;i++) {
-  my_server[i] = new MyModels.ServerModel({server_id: i});
-  my_server[i].id = i;
+  var my_server = new MyModels.ServerModel({id: i});
+  my_servers.add(my_server);
 }
 
 io.sockets.on('connection', function (socket) {
-  for(i=1;i<5;i++) {
-    my_server[i].bindServer(socket);
-  }
-  socket.on('server:read', function(data,fn){
-    fn(null,my_server[1].toJSON());
-  });
+  my_servers.bindServer(socket);
   socket.on('disconnect', function () {
-    for(i=1;i<5;i++) {
-      my_server[i].unbindServer(socket);
-    }
+    my_servers.each(function(my_server){
+      my_servers.unbindServer(socket);
+    });
   });
 });
 
+/*
   setInterval(function() { 
-    my_server[1].set('test',my_server[1].get('test')+1);
-    my_server[1].save();
-  }, 5000);
+    my_servers.get(1).set('test',my_servers.get(1).get('test')+1);
+    my_servers.get(1).save();
+  }, 6000);
+  */

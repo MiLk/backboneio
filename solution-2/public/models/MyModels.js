@@ -26,13 +26,14 @@
   MyModels.ServerModel = BackboneIO.Model.extend({
     urlRoot: 'server',
     defaults: {
-      test: 1
+      test: 1,
+      id: null
     },
   });
   
   MyModels.ServerCollection = BackboneIO.Collection.extend({
     model: MyModels.ServerModel,
-    url: 'servers',
+    url: 'server',
   });
 
 if(server) module.exports = MyModels;
