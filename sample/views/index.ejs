@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>backbone.IO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9" id="app">
+          <input type="reset" value="Refresh" id="#refresh"/>
+          <ul id="chat">
+          </ul>
+          <form action="#" method="post" onsubmit="return false">
+            <input type="text" name="author" placeholder="pseudo" />
+            <input type="text" name="message" placeholder="message" />
+            <input type="submit" /> 
+          </form>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.fluid-container-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/vendor/bootstrap.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/vendor/underscore-min.js"></script>
+		<script src="/vendor/backbone-min.js"></script>
+		<script src="/vendor/backboneio.js"></script>
+		<script src="/models/Chat.js"></script>
+		<script src="/js/main.js"></script>
+  </body>
+</html>

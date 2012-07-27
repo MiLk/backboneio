@@ -1,7 +1,7 @@
 {
   "author": "Emilien Kenler <hello@emilienkenler.com> (http://www.emilienkenler.com)",
-  "name": "backboneio-sol2",
-  "description": "BackboneIO Solution 2",
+  "name": "backboneio-sample",
+  "description": "BackboneIO Sample",
   "version": "0.0.1",
   "repository": {
     "url": "git://github.com/MiLk/backbone.git"
@@ -10,8 +10,7 @@
   "dependencies": {
   	"express": "*",
   	"underscore": "*",
-  	"backbone": "*",
-    "backbone.iobind": "*",
+  	"backboneio": "*",
   	"socket.io": "*",
   	"ejs": "*"
   },

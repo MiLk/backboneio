@@ -1,5 +1,9 @@
 # BackboneIO : Solution 1
 
+This solution allows to synchronize a model between client and server and update itself when changing.
+The changes are not broadcasted to all clients but only to those who use the model.
+The export and import functions are recursive, you can link othets models or collections to a main model that you share.
+
 ## Dépendences
 
 * node.js

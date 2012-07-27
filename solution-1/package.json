@@ -1,7 +1,7 @@
 {
   "author": "Emilien Kenler <hello@emilienkenler.com> (http://www.emilienkenler.com)",
-  "name": "backboneio",
-  "description": "BackboneIO",
+  "name": "backboneio-sol1",
+  "description": "BackboneIO Solution 2",
   "version": "0.0.1",
   "repository": {
     "url": "git://github.com/MiLk/backbone.git"
