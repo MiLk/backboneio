@@ -44,9 +44,7 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-/*
-  setInterval(function() { 
-    my_servers.get(1).set('test',my_servers.get(1).get('test')+1);
-    my_servers.get(1).save();
-  }, 6000);
-  */
+setInterval(function() { 
+  my_servers.get(1).set('test',my_servers.get(1).get('test')+1);
+  my_servers.get(1).save();
+}, 6000);

@@ -77,3 +77,21 @@ J'y ai ensuite fait quelques modifications afin de rendre opérationnel l'utilis
 Par défaut iobind demande de réaliser une API qui communique via socket.io pour répondre aux clients.
 Ici ce n'est pas le cas, et des fonctions standards sont en place dans le modèle.
 
+## Methodes callback
+
+### Model
+
+__onClientChange__ est appelée sur le serveur lorsqu'un client demande une modification d'un _Model_ via la méthode _save()_.
+__onClientDelete__ est appelée sur le serveur lorsqu'un client demande la suppression d'un _Model_ via la méthode _destroy()_.
+Ces 2 méthodes font ensuite appel aux méthodes permettant de répercuter les modifications à l'ensemble des clients liés.
+
+__onServerChange__ est appelée sur le client lorsque le serveur demande une modification d'un _Model_ via la méthode _save()_.
+__onServerDelete__ est appelée sur le client lorsque le serveur demande la suppression d'un _Model_ via la méthode _destroy()_.
+
+### Collection
+
+__onClientRead__ est appelée sur le serveur lors de l'utilisation de la méthode _fetch()_ par le client.
+__onClientCreate__ est appelée sur le serveur lors de la création d'un _Model_ par le client avec la méthode _save()_, l'_id_ du _Model_ doit etre nul. La modification est répercutée sur les autres clients.
+
+__onServerCreate__ est appelée sur le client lorsque le serveur demande la création d'un _Model_.
+

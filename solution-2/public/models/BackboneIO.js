@@ -46,7 +46,7 @@
         if (err) {
           options.error(err);
         } else {
-          options.success(data);
+          if(options.success) options.success(data);
         }
       });
     }
