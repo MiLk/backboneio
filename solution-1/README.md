@@ -30,7 +30,7 @@ Le serveur incrémente de 1 la variable à interval régulier.
 
 ## Reutilisation des modèles
 
-Ceci est fait grace a la specification CommonJS.
+Ceci est fait grâce à la specification CommonJS.
 La structure est inspirée du code de backbone.js.
 
 ```javascript
@@ -79,21 +79,21 @@ Les fonctions mport et xport sont issues de cet article : http://andyet.net/blog
 
 Cela se passe en surchargeant la méthode _sync_ du modèle.
 On envoie l'événement suivant au serveur : _url/id:update_.
-La methode _binServer(socket)_ permet de faire écouter le serveur sur cet événement.
+La methode _bindServer(socket)_ permet de faire écouter le serveur sur cet événement.
 Elle permet aussi de maintenir une liste de tous les sockets liés à ce modèle.
-C'est aussi à se moment qu'est fixé l'id du model, afin que tous les clients aient le meme et que ça ne crée pas de conflit.
+C'est aussi à se moment qu'est fixé l'id du model, afin que tous les clients aient le même et que ça ne crée pas de conflit.
 
-## Informer tous les clients cocernés
+## Informer tous les clients concernés
 
 Lors de l'import par le serveur des données, celui-ci save ensuite ce qui redéclenche la méthode sync.
-Cette fois-ci elle va broadcaster à tous les sockets qui se ont été préalablement bindé, c'est à dire aux clients.
+Cette fois-ci elle va broadcaster à tous les sockets qui ont été préalablement bindés, c'est à dire aux clients.
 
 La méthode _bindClient_ permet d'écouter les modifications venant du serveur.
 
 ## Limites
 
 Cette solution a des limites, elle ne permet de synchroniser qu'un seul modèle.
-En revanche l'import et l'export étant récursif, il est possible de lui lié des collections et autres modèles qui seront exportés en meme temps.
+En revanche l'import et l'export étant récursif, il est possible de lui lier des collections et autres modèles qui seront exportés en meme temps.
 Cette solution est donc utile pour synchroniser l'état d'une application complète entre le serveur et un ou plusieurs clients.
 
 ## Comparaison avec Backbone.io (http://scttnlsn.github.com/backbone.io/)
