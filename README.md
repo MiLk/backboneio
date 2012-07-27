@@ -2,7 +2,7 @@
 
 This module allow you to reuse the same _Backbone.js_ model between the client and the server (_Node.js_) and synchronize them with _socket.io_.
 This solution is built on top of _Backbone.iobind_ (http://alogicalparadox.com/backbone.iobind/).
-BackboneIO extend the Backbone module and provide a _BackboneIO.sync_ function that communicate with socket.io instead of using HTTP methods.
+_BackboneIO_ extend the _Backbone_ module and provide a _BackboneIO.sync_ function that communicate with _socket.io_ instead of using HTTP methods.
 The _BackboneIO.Model_ has default functions to _update_ or _delete_ a _Model_.
 The _BackboneIO.Collection_ has default functions to _create_ a _Model_ or _read_ a _Collection_.
 
