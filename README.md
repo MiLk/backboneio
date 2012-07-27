@@ -22,8 +22,7 @@ Then put this code in your HTML :
 
 == Use
 
-Coming soon ...
-You can look at https://github.com/MiLk/backboneio/tree/master/solution-2
+A basic example is available in sample directory.
 
 == Thanks
 
