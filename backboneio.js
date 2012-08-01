@@ -59,9 +59,9 @@
   });
 
   BackboneIO.Model = Backbone.Model.extend({
-    sockets: [],
+    sockets: {},
     bindServer: function(socket){
-      if(this.sockets.indexOf(socket) === -1) this.sockets.push(socket);
+      this.sockets[socket.id] = socket;
       if(!this.id) this.id = this.get('id');
       _.bindAll(this, 'onClientChange', 'onClientDelete', 'modelCleanup');
       if (!this.noIoBind) {
@@ -70,11 +70,8 @@
       }
     },
     unbindServer: function(socket) {
-      while(this.sockets.indexOf(socket) > -1)
-      {
-        this.ioUnbindAll(socket);
-        this.sockets.splice(this.sockets.indexOf(socket),1);
-      }
+      this.ioUnbindAll(socket);
+      delete this.sockets[socket.id];
     },
     onClientChange: function(resp){
        if(!this.set(this.parse(resp))) return false;
@@ -181,9 +178,10 @@
   });
 
   BackboneIO.Collection = Backbone.Collection.extend({
-    sockets: [],
+    sockets: {},
     bindServer: function(socket){
-      if(this.sockets.indexOf(socket) === -1) this.sockets.push(socket);
+      if(typeof socket.id === 'undefined') return false;
+      this.sockets[socket.id] = socket;
       if(typeof this.id === 'undefined') this.id = this.cid;
       _.bindAll(this, 'onClientRead','onClientCreate', 'collectionCleanup');
       if (!this.noIoBind) {
@@ -194,15 +192,15 @@
         //this.ioBind('read', socket, this.onClientRead, this);
         socket.on(this.url+':read', this.onClientRead);
       }
+      _.each(this.models,function(model){
+        model.bindServer(socket);
+      });
     },
     unbindServer: function(socket) {
-      while(this.sockets.indexOf(socket) > -1)
-      {
-        this.ioUnbindAll(socket);
-        this.sockets.splice(this.sockets.indexOf(socket),1);
-      }
+      this.ioUnbindAll(socket);
       socket.removeListener(this.url+':create', this.onClientCreate);
       socket.removeListener(this.url+':read', this.onClientRead);
+      delete this.sockets[socket.id];
     },
     onClientRead: function(data,fn){
       fn(null,this.toJSON());
