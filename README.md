@@ -12,6 +12,10 @@ For the server just type :
 ```
 npm install backboneio
 ```
+or via git repository :
+```
+npm install git://github.com/MiLk/backboneio.git
+```
 
 For the client you need to copy the files _backbone.js_ and _backboneio.js_ in your javascript directory.
 Then put this code in your HTML :

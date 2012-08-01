@@ -1,6 +1,6 @@
 {
   "name": "backboneio",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Share Backbone.js models between client and server and sync them with socket.io",
   "main": "index.js",
   "repository": {
