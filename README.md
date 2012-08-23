@@ -1,4 +1,4 @@
-= BackboneIO
+# BackboneIO
 
 This module allow you to reuse the same _Backbone.js_ model between the client and the server (_Node.js_) and synchronize them with _socket.io_.
 This solution is built on top of _Backbone.iobind_ (http://alogicalparadox.com/backbone.iobind/).
@@ -6,7 +6,7 @@ _BackboneIO_ extend the _Backbone_ module and provide a _BackboneIO.sync_ functi
 The _BackboneIO.Model_ has default functions to _update_ or _delete_ a _Model_.
 The _BackboneIO.Collection_ has default functions to _create_ a _Model_ or _read_ a _Collection_.
 
-== Install
+## Install
 
 For the server just type :
 ```
@@ -24,15 +24,15 @@ Then put this code in your HTML :
 <script src="/js/backboneio.js"></script>
 ```
 
-== Use
+## Use
 
 A basic example is available in sample directory.
 
-== Thanks
+## Thanks
 
 * Jake Luer [[Github: @logicalparadox](http://github.com/logicalparadox)] [[Twitter: @jakeluer](http://twitter.com/jakeluer)] [[Website](http://alogicalparadox.com)]
 
-== LICENSE
+## LICENSE
 
 New BSD License
 
