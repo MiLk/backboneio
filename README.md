@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/MiLk/backboneio.png)](http://travis-ci.org/MiLk/backboneio)
 = BackboneIO
 
 This module allow you to reuse the same _Backbone.js_ model between the client and the server (_Node.js_) and synchronize them with _socket.io_.
