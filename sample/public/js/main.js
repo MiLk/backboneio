@@ -26,6 +26,10 @@ var app = (function(){
         console.log('['+message.get('time')+'] '+message.get('author')+' : '+message.get('text'));
       });
     },
+    delete: function(){
+      console.log(messages.first());
+      messages.first().destroy();
+    },
   }
 })();
 

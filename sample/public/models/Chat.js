@@ -50,9 +50,16 @@
           this.model.bind('all', this.render);
       },
       render: function( event ){
+        if(event == 'delete')
+        {
+          this.$el.remove();
+        }
+        else
+        {
           var compiled_template = _.template('[<%= time %>] <%= author %> : <%= text %>');
           this.$el.html( compiled_template(this.model.toJSON()) );
-          return this; //recommended as this enables calls to be chained.
+        }
+        return this; //recommended as this enables calls to be chained.
       }, 
     });
 
